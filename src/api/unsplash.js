@@ -1,8 +1,12 @@
 import axios from "axios";
+import Env from '../env';
+
+const authObj = Env.vars();
+
 
 export default axios.create({
 	baseURL:'https://api.unsplash.com/',
 	headers: {
-		Authorization: "Client-ID i7Cl-0uJAn7ftD3i0d4mHRuD4yDPqMPZSZs5_dY0shQ",
+		Authorization: `Client-ID ${authObj.REACT_APP_AUTHORIZATION_STRING}`,
 	},
 })
